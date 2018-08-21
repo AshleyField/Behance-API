@@ -2,7 +2,7 @@ $(function(){
 
 	var key = 'XoduXB60sBkiKQTdWMHY7nhQ4zaJZ7tz'
 
-	let urlProjects = 'https://api.behance.net/v2/users/pervinozcan/projects?client_id='+ key;
+	let urlProjects = 'https://api.behance.net/v2/users/hochburg/projects?client_id='+ key;
 
 
 	if($('#index').length > 0){
@@ -13,10 +13,28 @@ $(function(){
 
 				console.log(res);
 				
-				_(res.projects).each(function(project){
+				_(res.projects).each(function(project,i){
 
-					$('<li>'+ project.name +'<img src="'+ project.covers.original +'" alt=""> <a href="project.html?id='+project.id+'"> See More </a></li>').appendTo('ul.projects')
+					$('<li><h1>'+ project.name +'</h1><img src="'+ project.covers.original +'" alt=""> <a href="project.html?id='+project.id+'"> See More </a></li>').appendTo('ul.projects')
+				
+					if(i<3){
+						$('<div class="swiper-slide slide-image" style="background-image: url('+ project.covers.original  +');"><div class="swiper-inner"><span>'+ project.name +'</span><a href="project.html?id='+project.id+'"> View Project </a></div></div>').appendTo('.swiper-wrapper')
+					}
 				});
+
+				var swiper = new Swiper('.swiper-container', {
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+					pagination: {
+						el: '.swiper-pagination',
+						dynamicBullets: true,
+					}
+				});
+
+				//if lates 3
+
 			}
 		})
 	}
