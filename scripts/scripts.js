@@ -3,6 +3,20 @@ $(function(){
 	var key = 'XoduXB60sBkiKQTdWMHY7nhQ4zaJZ7tz'
 
 	let urlProjects = 'https://api.behance.net/v2/users/hochburg/projects?client_id='+ key;
+	let urlStats = 'https://api.behance.net/v2/users/hochburg/stats?client_id='+ key;
+
+	$.ajax({
+			url: urlStats,
+			dataType: 'jsonp',
+			success: function(res){
+				console.log(res)
+
+				$('.profile-views').append(': ' + numeral(res.stats.all_time.profile_views).format('0,0'));
+				$('.project-appreciations').append(': ' + numeral(res.stats.all_time.project_appreciations).format('0,0'));
+				$('.project-comments').append(': ' + numeral(res.stats.all_time.project_comments).format('0,0'));
+				$('.project-views').append(': ' + numeral(res.stats.all_time.project_views).format('0,0'));
+			}
+		})
 
 
 	if($('#index').length > 0){
@@ -10,8 +24,6 @@ $(function(){
 			url: urlProjects,
 			dataType: 'jsonp',
 			success: function(res){
-
-				console.log(res);
 				
 				_(res.projects).each(function(project,i){
 

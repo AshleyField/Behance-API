@@ -48,6 +48,14 @@ body {
 	}
 }
 
+@media only screen and (min-width : 55em) {
+	.projects {
+		li {
+			flex: 1 0 15%;
+		}
+	}
+}
+
 .banner {
 	height: 20em;
 }
@@ -135,5 +143,75 @@ body {
 		border-radius: 5px;
 		margin-top: 1em;
 		box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	}
+}
+
+.container {
+	padding: 1em;
+
+	img {
+		width: 100%;
+		display: block;
+	}
+}
+
+
+//Stats
+
+.stats {
+	margin: 1em;
+	text-align: center;
+
+	&-info-row {
+		margin-bottom: .5em;
+	}
+}
+
+@media only screen and (min-width : 55em) {
+	.stats {
+		display: flex;
+		flex-wrap: wrap;
+
+
+		&-heading {
+			flex: 1 0 90%;
+		}
+
+		&-info {
+			flex: 1 0 90%;
+			display: flex;
+			justify-content: center;
+
+			&-row {
+				flex: 0 0 25%;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width : 55em) {
+	.stats {
+		margin: 2em;
+
+		&-heading {
+			margin-bottom: 2em;
+			span {
+				font-size: 2em;
+			}
+		}
+
+		&-info-row {
+			span {
+				font-size: 1em;
+			}
+		}
+	}
+}
+
+.the-end {
+	text-align: center;
+	margin: 2em;
+	span {
+		color: #878491;
 	}
 }
