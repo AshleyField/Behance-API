@@ -38,6 +38,7 @@ body {
 			position: relative;
 			text-decoration: none;
 			margin: 1em;
+			display: block;
 
 			&:before {
 				content: '-';
@@ -213,5 +214,122 @@ body {
 	margin: 2em;
 	span {
 		color: #878491;
+	}
+}
+
+.header {
+	margin: .5em 0;
+
+	a {
+		color: #000;
+		text-decoration: none;
+		display: block;
+		text-transform: uppercase;
+
+		i {
+			margin-right: .25em;
+		}
+	}
+}
+
+.project-content {
+	.project-content-heading {
+		font-weight: 700;
+		text-transform: uppercase;
+		text-decoration: underline;
+		font-size: 1.25em;
+	}
+}
+
+.comments-heading {
+	font-weight: 700;
+	font-size: 1.25em;
+}
+
+.comment {
+	font-weight: 300;
+	margin-bottom: .5em;
+
+	&:before {
+		content: '- '
+	}
+
+	.user-first {
+		font-weight: 400;
+		margin-left: 1em;
+
+		&:before {
+			content: '- ';
+		}
+	}
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+
+	&-item {
+		flex: 1 0 45%;
+		// margin: .5em 0;
+
+		margin:0.5em;
+
+		&:nth-child(odd) {
+			margin-left: 0;
+		}
+
+		&:nth-child(even) {
+			margin-right: 0;
+		}
+	}
+}
+
+.project-image {
+	margin-bottom: .5em;
+}
+
+
+@media only screen and (min-width : 55em){
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+
+		.project-content {
+			flex: 1 0 45%;
+			padding: 1em;
+		}
+
+		.project-image {
+			flex: 1 0 45%;
+			padding: 1em;
+		}
+
+		.comments {
+			flex: 1 0 90%;
+		}
+
+		.header {
+			flex: 1 0 90%;
+		}
+	}
+
+	.gallery-item {
+		flex: 1 0 20%;
+		margin: .5em;
+
+		&:nth-child(odd) {
+			margin-left: .5em;
+		}
+
+		&:nth-child(even) {
+			margin-right: .5em;
+		}
+	}
+}
+
+@media only screen and (min-width : 65em){
+	.container {
+		max-width: 70em;
+		margin: auto;
 	}
 }
