@@ -11,7 +11,7 @@ This project is based around the Behance API. The goal is to produce a basic web
 - Node.js
 - Gulp
 
-##### Plugins Used
+###### Plugins Used
 
 - jQuery
 - Underscore.js
